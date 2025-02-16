@@ -1,0 +1,43 @@
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+using namespace std;
+int main()
+{
+    int number;
+
+    srand(time(0));
+    int randomNumber=rand()%100;
+    cout<<"********CHASE THE RANDOM NUMBER*******"<<endl;
+
+    do
+    {
+        cout<<"Guess the Number:"<<endl;
+        cin>>number;
+
+        if(number==-1)
+        {
+            cout<<"Random Number is:"<<randomNumber<<endl;
+            break;
+        }
+        if(number==randomNumber)
+        {
+          cout<<"woow your won:"<<endl;
+          break;
+        }
+        else if(number>randomNumber)
+        {
+            cout<<"try smaller number to match:"<<endl;
+            cout<<"TO EXIT press -1:"<<endl;
+            cout<<"**************************"<<endl;
+        }
+        else  if(number<randomNumber)
+        {
+            cout<<"try greater number to match:"<<endl;
+            cout<<"TO EXIT press -1:"<<endl;
+            cout<<"**************************"<<endl;
+        }
+
+    }while(number>0 and number<100);
+return 0;
+};
